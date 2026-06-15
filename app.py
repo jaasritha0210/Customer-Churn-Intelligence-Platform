@@ -4,7 +4,7 @@ import joblib
 import sklearn
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-
+from sklearn.pipeline import Pipeline
 # Load model and preprocessor
 model = joblib.load("model.pkl")
 preprocessor = joblib.load("preprocessor.pkl")
