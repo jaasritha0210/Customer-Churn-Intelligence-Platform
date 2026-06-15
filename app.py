@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
+model = joblib.load("model.pkl")
+preprocessor = joblib.load("preprocessor.pkl")
 st.header("Customer Information")
 
 gender = st.selectbox("Gender", ["Male", "Female"])
@@ -158,7 +159,7 @@ if st.button("Predict Churn"):
         'Tenure Group': [tenure_group],
         'Avg Revenue Per Month': [avg_revenue_per_month]
     })
-
+    st.write(input_data.columns)
     processed_data = preprocessor.transform(input_data)
 
     prediction = model.predict(processed_data)[0]
