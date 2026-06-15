@@ -1,3 +1,7 @@
+import streamlit as st
+import pandas as pd
+import joblib
+
 st.header("Customer Information")
 
 gender = st.selectbox("Gender", ["Male", "Female"])
